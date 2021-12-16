@@ -1,7 +1,7 @@
-Olá!
+## Olá!
 
 Este é o primeiro porjeto Java do curso DevinHouse.
-Provávelmente sera uma ferramenta basica de vídeos on-demand nomeado DeviFlix!! ;-)
+Provavelmente sera uma ferramenta basica de vídeos on-demand nomeado DeviFlix!! ;-)
 
 
 
