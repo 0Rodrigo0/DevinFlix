@@ -3,6 +3,7 @@ package usuarios;
 // Sempre comUsuarioaiuscula
 public class Usuario {
 
+    // campos do usuário
     public String nomeUsuario;
     public String enderecoUsuario;
     public String dataNacimentoUsuario;
@@ -16,11 +17,11 @@ public class Usuario {
     // this.dataNacimentoUsuario = dataNacimentoUsuario;
     // }
 
+    // Getter e Setters para poder inserir opcoes automaticamente nos objetos.
     public String getNomeUsuario() {
         return nomeUsuario;
     }
 
-    // Getther e Setters
     public void setNomeUsuario(String nomeUsuario) {
         this.nomeUsuario = nomeUsuario;
     }
@@ -41,8 +42,11 @@ public class Usuario {
         this.dataNacimentoUsuario = dataNacimentoUsuario;
     }
 
+    // converte os dados do objeto para serem legiveis como String
     @Override
     public String toString() {
+
+        // o metodo precisa do retorno para ser impresso depois na Main
         return "Nome: " + nomeUsuario + ". Endereço: " + enderecoUsuario + ". Data de Nascimento: "
                 + dataNacimentoUsuario + "\n";
     }

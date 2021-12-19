@@ -1,7 +1,10 @@
 package main;
 
+//
 import java.util.ArrayList;
+// importa utilitario de listas
 import java.util.List;
+// Importa o Scanner
 import java.util.Scanner;
 
 import usuarios.Usuario;
@@ -67,6 +70,7 @@ public class Main {
             }
             if (opcao == 2) {
                 System.out.println("_________________________________________");
+                // puxa a configuração setada no Usuários.java
                 System.out.println(relacaoUsuario.toString());
                 System.out.println("_________________________________________");
             }
