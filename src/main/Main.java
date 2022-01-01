@@ -20,7 +20,6 @@ public class Main {
     public static void menuInicial() {
         // chama a classe Usuario e inicializa uma variavel u1
         Usuario u1;
-        ListaFilmes lista;
         Filme film;
         // inicializa o scanner
         Scanner inicio = new Scanner(System.in);
@@ -30,9 +29,8 @@ public class Main {
         // cria uma nova array com a classe Usuario
         List<Usuario> relacaoUsuario = new ArrayList<Usuario>();
         List<Filme> relacaoFilmes = new ArrayList<Filme>();
+        System.out.println("****** Bem Vindo ao DevinFlix ******** ");
         do {
-
-            System.out.println("****** BEM VINDO AO DevinFlix ******** ");
             System.out.println("O que você deseja fazer?");
             System.out.println(" ");
             System.out.println("Digite 1 para cadastrar um usuário.");
@@ -45,7 +43,8 @@ public class Main {
             System.out.println(" ");
             // joga dentro de opcao o inteiro capturado pelo scanner
             opcao = Integer.parseInt(inicio.nextLine());
-            System.out.println("_________________________________________");
+            System.out.println(
+                    "______________________________________________________________________________________________________");
 
             if (opcao == 1) {
                 System.out.println(" ");
@@ -60,7 +59,8 @@ public class Main {
                 } while (u1.nomeUsuario.matches("[0-9]*") | u1.nomeUsuario.matches("[ ]*"));
 
                 do {
-                    System.out.println("_________________________________________");
+                    System.out.println(
+                            "______________________________________________________________________________________________________");
                     System.out.println("Digite seu endereço com numero!");
                     System.out.println(" ");
                     System.out.print("Digite seu Endereço: ");
@@ -71,7 +71,8 @@ public class Main {
                         | u1.enderecoUsuario.matches("[A-Z]*"));
 
                 do {
-                    System.out.println("_________________________________________");
+                    System.out.println(
+                            "______________________________________________________________________________________________________");
                     System.out.print("Digite sua data de nascimento: ");
                     // definne as informações digitadas para nosso objeto da classe usuario
                     u1.setDataNacimentoUsuario(inicio.nextLine());
@@ -112,6 +113,8 @@ public class Main {
                         "______________________________________________________________________________________________________");
                 System.out.println("Filmes Sugeridos: ");
                 System.out.println(relacaoFilmes.toString());
+                System.out.println(
+                        "______________________________________________________________________________________________________");
             }
             if (opcao == 4) {
             }
