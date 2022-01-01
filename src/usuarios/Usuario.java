@@ -45,7 +45,6 @@ public class Usuario {
     // converte os dados do objeto para serem legiveis como String
     @Override
     public String toString() {
-
         // o metodo precisa do retorno para ser impresso depois na Main
         return "Nome: " + nomeUsuario + ". Endereço: " + enderecoUsuario + ". Data de Nascimento: "
                 + dataNacimentoUsuario + "\n";

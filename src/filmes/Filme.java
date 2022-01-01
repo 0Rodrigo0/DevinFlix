@@ -8,13 +8,6 @@ public class Filme {
     public String sinopse;
     public String link;
 
-    // forma de criar filme
-    // Filme(String nome, String genero, String sinopse, String link) {
-    // this.nome = nome;
-    // this.genero = genero;
-    // this.sinopse = sinopse;
-    // this.link = link;
-
     public String getNome() {
         return nome;
     }
@@ -46,4 +39,12 @@ public class Filme {
     public void setLink(String link) {
         this.link = link;
     }
+
+    @Override
+    public String toString() {
+        // o metodo precisa do retorno para ser impresso depois na Main
+        return "Nome: " + nome + ". Genero: " + genero + ". Sinopse: "
+                + sinopse + ". Link: " + link + "\n";
+    }
+
 }
