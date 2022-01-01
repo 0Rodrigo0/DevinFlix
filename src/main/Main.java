@@ -119,14 +119,12 @@ public class Main {
             if (opcao == 4) {
             }
             if (opcao == 5) {
-
                 System.out.println(" ");
                 System.out.println("Se voce deseja cadastrar um filme digite '1', se deseja sair digite '2'. ");
                 opcao = Integer.parseInt(inicio.nextLine());
                 film = new Filme();
                 if (opcao == 1) {
                     do {
-                        System.out.println("Por favor digite seu nome APENAS com Letras!");
                         System.out.println(" ");
                         System.out.print("Digite o nome do Filme: ");
                         // definne as informações digitadas para nosso objeto da classe usuario
