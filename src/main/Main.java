@@ -126,7 +126,7 @@ public class Main {
                                 filmesLoja();
                                 System.out.println(
                                                 "______________________________________________________________________________________________________");
-                                System.out.println("Filmes Sugeridos por vocês: ");
+                                System.out.println("Filmes Sugeridos por você: ");
                                 System.out.println(relacaoFilmes.toString());
                                 System.out.println(
                                                 "______________________________________________________________________________________________________");
@@ -139,24 +139,27 @@ public class Main {
                                         filmesLoja();
                                         opcao = Integer.parseInt(inicio.nextLine());
 
+                                        if (opcao == 1) {
+                                        }
+
                                 } while (opcao != 0);
                         }
                         // sugerir um filme
                         if (opcao == 5) {
                                 System.out.println(" ");
-                                System.out.println(
-                                                "Se voce deseja sugerir um filme digite '1', se não digite '2'. ");
-                                opcao = Integer.parseInt(inicio.nextLine());
+                                // System.out.println(
+                                // "Se voce deseja sugerir um filme digite '1', se não digite '2'. ");
+                                // opcao = Integer.parseInt(inicio.nextLine());
                                 film = new Filme();
-                                if (opcao == 1) {
-                                        do {
-                                                System.out.println(" ");
-                                                System.out.print("Digite o nome do Filme: ");
-                                                // definne as informações digitadas para nosso objeto da classe usuario
-                                                film.setNome(inicio.nextLine());
-                                        } while (film.nome.matches("[0-9]*") | film.nome.matches("[ ]*"));
-                                        relacaoFilmes.add(film);
-                                }
+                                // if (opcao == 1) {
+                                do {
+                                        // System.out.println(" ");
+                                        System.out.print("Digite o nome do Filme: ");
+                                        // definne as informações digitadas para nosso objeto da classe usuario
+                                        film.setNome(inicio.nextLine());
+                                } while (film.nome.matches("[0-9]*") | film.nome.matches("[ ]*"));
+                                relacaoFilmes.add(film);
+                                // }
                         }
                         // ????????
                         if (opcao == 6) {
