@@ -29,27 +29,24 @@ public class Main {
                                 "abelaeafera.com");
                 System.out.println("Estes são os filmes de nosso catálogo: ");
                 System.out.println(" ");
-                System.out.println("Id: " + f1.id + ". Nome: " + f1.nome + ". Genero: " + f1.genero + " Sinopse: "
-                                + f1.sinopse
-                                + ". Link: " + f1.link);
-                System.out.println("Id: " + f2.id
-                                + ". Nome: " + f2.nome + ". Genero: " + f2.genero + " Sinopse: "
-                                + f2.sinopse
-                                + ". Link: " + f2.link);
-                System.out.println("Id: " + f3.id
-                                + ". Nome: " + f3.nome + ". Genero: " + f3.genero + " Sinopse: "
-                                + f3.sinopse
-                                + ". Link: " + f3.link);
-                System.out.println("Id: " + f4.id
-                                + ". Nome: " + f4.nome + ". Genero: " + f4.genero + " Sinopse: "
-                                + f4.sinopse
-                                + ". Link: " + f4.link);
+                System.out.println("Id: " + f1.id + " Nome: " + f1.nome + ". Genero: " + f1.genero + " Sinopse: "
+                                + f1.sinopse + ". Link: " + f1.link);
+                System.out.println("Id: " + f2.id + " Nome: " + f2.nome + ". Genero: " + f2.genero + " Sinopse: "
+                                + f2.sinopse + ". Link: " + f2.link);
+                System.out.println("Id: " + f3.id + " Nome: " + f3.nome + ". Genero: " + f3.genero + " Sinopse: "
+                                + f3.sinopse + ". Link: " + f3.link);
+                System.out.println("Id: " + f4.id + " Nome: " + f4.nome + ". Genero: " + f4.genero + " Sinopse: "
+                                + f4.sinopse + ". Link: " + f4.link);
         }
 
         public static void menuInicial() {
                 // chama a classe Usuario e inicializa uma variavel u1
                 Usuario u1;
                 Filme film;
+                int curtida1 = 0;
+                int curtida2 = 0;
+                int curtida3 = 0;
+                int curtida4 = 0;
                 // inicializa o scanner
                 Scanner inicio = new Scanner(System.in);
                 // inicializa a opcao do menu
@@ -58,6 +55,7 @@ public class Main {
                 // cria uma nova array com a classe Usuario
                 List<Usuario> relacaoUsuario = new ArrayList<Usuario>();
                 List<Filme> relacaoFilmes = new ArrayList<Filme>();
+
                 System.out.println("****** Bem Vindo ao DevinFlix ******** ");
                 do {
                         System.out.println("O que você deseja fazer?");
@@ -133,16 +131,90 @@ public class Main {
                         }
                         // curtir/descurtir
                         if (opcao == 4) {
+
                                 do {
-                                        System.out.println(
-                                                        "Para curtir um filme selecione o 'ID' na lista abaixo ou '0' para sair:");
-                                        filmesLoja();
+                                        System.out.println("Você deseja 'Curtir' ou 'Descurtir' um filme?");
+                                        System.out.println("Curtir = 1 | Descurtir = 2 | Sair = 0");
                                         opcao = Integer.parseInt(inicio.nextLine());
-
+                                        // curtir
                                         if (opcao == 1) {
-                                        }
+                                                System.out.println("Digite o ID do filme que seseja Curtir:");
+                                                filmesLoja();
+                                                opcao = Integer.parseInt(inicio.nextLine());
+                                                if (opcao == 1) {
+                                                        curtida1 = curtida1 + 1;
+                                                        System.out.println("");
+                                                        System.out.println(
+                                                                        "Homem Aranha ganhou uma curtida");
+                                                        System.out.println("");
+                                                }
+                                                if (opcao == 2) {
+                                                        curtida2 = curtida2 + 1;
+                                                        System.out.println("");
+                                                        System.out.println(
+                                                                        "Star Wars ganhou uma curtida");
+                                                        System.out.println("");
+                                                }
+                                                if (opcao == 3) {
+                                                        curtida3 = curtida3 + 1;
+                                                        System.out.println("");
+                                                        System.out.println(
+                                                                        "Indiana Jones uma curtida");
+                                                        System.out.println("");
+                                                }
+                                                if (opcao == 4) {
+                                                        curtida4 = curtida4 + 1;
+                                                        System.out.println("");
+                                                        System.out.println(
+                                                                        "A Bela e a Fera uma curtida");
+                                                        System.out.println("");
+                                                }
 
+                                        }
+                                        // descuritr
+                                        if (opcao == 2) {
+                                                System.out.println("Digite o ID do filme que seseja Curtir:");
+                                                filmesLoja();
+                                                opcao = Integer.parseInt(inicio.nextLine());
+                                                if (opcao == 1) {
+                                                        curtida1 = curtida1 - 1;
+                                                        System.out.println("");
+                                                        System.out.println(
+                                                                        "Homem Aranha perdeu uma curtida");
+                                                        System.out.println("");
+                                                }
+                                                if (opcao == 2) {
+                                                        curtida2 = curtida2 - 1;
+                                                        System.out.println("");
+                                                        System.out.println(
+                                                                        "Star Wars perdeu uma curtida");
+                                                        System.out.println("");
+                                                }
+                                                if (opcao == 3) {
+                                                        curtida3 = curtida3 - 1;
+                                                        System.out.println("");
+                                                        System.out.println(
+                                                                        "Indiana Jones perdeu uma curtida");
+                                                        System.out.println("");
+                                                }
+                                                if (opcao == 4) {
+                                                        curtida4 = curtida4 - 1;
+                                                        System.out.println("");
+                                                        System.out.println(
+                                                                        "A Bela e a Fera perdeu uma curtida");
+                                                        System.out.println("");
+                                                }
+                                        }
                                 } while (opcao != 0);
+                                System.out.println("Curtidas:");
+                                System.out.println("");
+                                System.out.println("Homem Aranha tem " + curtida1 + " curtida(s)");
+                                System.out.println("Star Wars tem " + curtida2 + " curtida");
+                                System.out.println("Indiana Jones " + curtida3 + " curtida");
+                                System.out.println("A Bela e a Fera " + curtida4 + " curtida");
+                                System.out.println("");
+                                System.out.println("");
+
                         }
                         // sugerir um filme
                         if (opcao == 5) {
