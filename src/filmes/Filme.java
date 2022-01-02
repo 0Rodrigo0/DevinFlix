@@ -43,8 +43,9 @@ public class Filme {
     @Override
     public String toString() {
         // o metodo precisa do retorno para ser impresso depois na Main
-        return "Nome: " + nome + ". Genero: " + genero + ". Sinopse: "
-                + sinopse + ". Link: " + link + "\n";
+        return "Nome: " + nome + "\n";
+        // return "Nome: " + nome + ". Genero: " + genero + ". Sinopse: "
+        // + sinopse + ". Link: " + link + "\n";
     }
 
 }
