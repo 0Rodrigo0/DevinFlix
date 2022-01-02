@@ -66,15 +66,15 @@ public class Main {
                         System.out.println("Digite 2 para ver lista de usuários.");
                         System.out.println("Digite 3 para ver lista de filmes.");
                         System.out.println("Digite 4 para curtir/descurtir um filme.");
-                        System.out.println("Digite 5 para cadastrar um filme.");
-                        System.out.println("Digite 6 para indicar um filme.");
+                        System.out.println("Digite 5 para sugerir um filme.");
+                        System.out.println("Digite 6 para ????????.");
                         System.out.println("Digite 7 para sair.");
                         System.out.println(" ");
                         // joga dentro de opcao o inteiro capturado pelo scanner
                         opcao = Integer.parseInt(inicio.nextLine());
                         System.out.println(
                                         "______________________________________________________________________________________________________");
-
+                        // cadastrar um usuário
                         if (opcao == 1) {
                                 System.out.println(" ");
                                 System.out.println("Vamos começar a criar seu cadastro.");
@@ -114,12 +114,14 @@ public class Main {
                                 // adiciona a lista criada o primeiro usuário criado
                                 relacaoUsuario.add(u1);
                         }
+                        // lista de usuários
                         if (opcao == 2) {
                                 System.out.println("_________________________________________");
                                 // puxa a configuração setada no Usuários.java
                                 System.out.println(relacaoUsuario.toString());
                                 System.out.println("_________________________________________");
                         }
+                        // lista de filmes
                         if (opcao == 3) {
                                 filmesLoja();
                                 System.out.println(
@@ -129,14 +131,17 @@ public class Main {
                                 System.out.println(
                                                 "______________________________________________________________________________________________________");
                         }
+                        // curtir/descurtir
                         if (opcao == 4) {
-                                System.out.println("Você pode curtir um filme selecionando o 'ID' na lista abaixo...");
-                                filmesLoja();
-                                opcao = Integer.parseInt(inicio.nextLine());
-                                if (opcao == 1) {
+                                do {
+                                        System.out.println(
+                                                        "Para curtir um filme selecione o 'ID' na lista abaixo ou '0' para sair:");
+                                        filmesLoja();
+                                        opcao = Integer.parseInt(inicio.nextLine());
 
-                                }
+                                } while (opcao != 0);
                         }
+                        // sugerir um filme
                         if (opcao == 5) {
                                 System.out.println(" ");
                                 System.out.println(
@@ -153,6 +158,7 @@ public class Main {
                                         relacaoFilmes.add(film);
                                 }
                         }
+                        // ????????
                         if (opcao == 6) {
                         }
                 } while (opcao != 7);
