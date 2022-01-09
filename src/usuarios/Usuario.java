@@ -7,6 +7,7 @@ public class Usuario {
     public String nomeUsuario;
     public String enderecoUsuario;
     public String dataNacimentoUsuario;
+    public String nome;
 
     // forma de criar usuario
     // public Usuario(String nomeUsuario, String enderecoUsuario, String
