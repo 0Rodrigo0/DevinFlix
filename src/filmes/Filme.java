@@ -1,12 +1,23 @@
 package filmes;
 
-// Sempre com letra maiuscula
+import java.net.URL;
+import java.time.LocalDate;
+
 public class Filme {
 
-    public String nome;
-    public String genero;
-    public String sinopse;
-    public String link;
+    private String nome;
+    private String sinopse;
+    private Genero genero;
+    private URL link;
+    private LocalDate anoLancamento;
+
+    public LocalDate getAnoLancamento() {
+        return anoLancamento;
+    }
+
+    public void setAnoLancamento(LocalDate anoLancamento) {
+        this.anoLancamento = anoLancamento;
+    }
 
     public String getNome() {
         return nome;
@@ -14,14 +25,6 @@ public class Filme {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
     }
 
     public String getSinopse() {
@@ -32,20 +35,20 @@ public class Filme {
         this.sinopse = sinopse;
     }
 
-    public String getLink() {
+    public Genero getGenero() {
+        return genero;
+    }
+
+    public void setGenero(Genero genero) {
+        this.genero = genero;
+    }
+
+    public URL getLink() {
         return link;
     }
 
-    public void setLink(String link) {
+    public void setLink(URL link) {
         this.link = link;
-    }
-
-    @Override
-    public String toString() {
-        // o metodo precisa do retorno para ser impresso depois na Main
-        return "Nome: " + nome + "\n";
-        // return "Nome: " + nome + ". Genero: " + genero + ". Sinopse: "
-        // + sinopse + ". Link: " + link + "\n";
     }
 
 }
