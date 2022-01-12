@@ -71,8 +71,7 @@ public class Filme {
 
     @Override
     public String toString() {
-        return "Filme [anoLancamento=" + anoLancamento + ", curtiu=" + curtiu + ", descurtiu=" + descurtiu + ", genero="
-                + genero + ", link=" + link + ", nome=" + nome + ", sinopse=" + sinopse + "]";
+        return nome;
     }
 
 }

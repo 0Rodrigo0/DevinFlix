@@ -12,9 +12,10 @@ public class Main {
                 devinFlix();
         }
 
-        public static void escolheFilme(Filme filme, Usuario usuario) {
-                System.out.println(filme.toString());
-                System.out.println(usuario.toString());
+        public static void escolheFilme(Usuario usuario, Filme filme) {
+                System.out.println(" ");
+                System.out.println(usuario.toString() + " esta assistindo " + filme.toString());
+                System.out.println(" ");
 
         }
 
@@ -42,7 +43,7 @@ public class Main {
                 opcao = Integer.parseInt(inicio.nextLine());
 
                 if (opcao == 1) {
-                        escolheFilme(f1, u1);
+                        escolheFilme(u1, f1);
                 }
                 inicio.close();
 
