@@ -7,7 +7,6 @@ import usuarios.Usuario;
 
 public class Main {
 
-        // aqui chama a funcionalidade do menu inicial.
         public static void main(String[] args) {
                 devinFlix();
         }
@@ -34,6 +33,7 @@ public class Main {
 
                 Scanner inicio = new Scanner(System.in);
                 int opcao = 0;
+
                 Usuario u1 = new Usuario();
                 u1.setNome("Joao");
                 u1.setDataNascimento(LocalDate.of(1990, 1, 1));
