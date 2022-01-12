@@ -2,7 +2,7 @@ package usuarios;
 
 import java.time.LocalDate;
 
-public class Usuarios {
+public class Usuario {
 
     private String nome;
     private String endereco;
@@ -30,6 +30,11 @@ public class Usuarios {
 
     public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario [dataNascimento=" + dataNascimento + ", endereco=" + endereco + ", nome=" + nome + "]";
     }
 
 }

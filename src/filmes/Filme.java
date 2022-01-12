@@ -10,6 +10,8 @@ public class Filme {
     private Genero genero;
     private URL link;
     private LocalDate anoLancamento;
+    private Integer curtiu;
+    private Integer descurtiu;
 
     public LocalDate getAnoLancamento() {
         return anoLancamento;
@@ -17,6 +19,22 @@ public class Filme {
 
     public void setAnoLancamento(LocalDate anoLancamento) {
         this.anoLancamento = anoLancamento;
+    }
+
+    public Integer getCurtiu() {
+        return curtiu;
+    }
+
+    public void setCurtiu(Integer curtiu) {
+        this.curtiu = curtiu;
+    }
+
+    public Integer getDescurtiu() {
+        return descurtiu;
+    }
+
+    public void setDescurtiu(Integer descurtiu) {
+        this.descurtiu = descurtiu;
     }
 
     public String getNome() {
@@ -49,6 +67,12 @@ public class Filme {
 
     public void setLink(URL link) {
         this.link = link;
+    }
+
+    @Override
+    public String toString() {
+        return "Filme [anoLancamento=" + anoLancamento + ", curtiu=" + curtiu + ", descurtiu=" + descurtiu + ", genero="
+                + genero + ", link=" + link + ", nome=" + nome + ", sinopse=" + sinopse + "]";
     }
 
 }
