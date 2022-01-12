@@ -10,8 +10,8 @@ public class Filme {
     private Genero genero;
     private URL link;
     private LocalDate anoLancamento;
-    private Integer curtiu;
-    private Integer descurtiu;
+    private Integer curtiu = 0;
+    private Integer descurtiu = 0;
 
     public LocalDate getAnoLancamento() {
         return anoLancamento;
@@ -71,7 +71,8 @@ public class Filme {
 
     @Override
     public String toString() {
-        return nome;
+        return "Filme anoLancamento=" + anoLancamento + ", curtiu=" + curtiu + ", descurtiu=" + descurtiu + ", genero="
+                + genero + ", link=" + link + ", nome=" + nome + ", sinopse=" + sinopse;
     }
 
 }

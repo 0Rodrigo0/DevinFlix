@@ -12,9 +12,20 @@ public class Main {
                 devinFlix();
         }
 
+        public static void curtirDescurtir(Usuario usuario, Filme filme, boolean curtir) {
+
+                if (curtir == true) {
+                        filme.setCurtiu(filme.getCurtiu() + 1);
+                } else {
+                        filme.setDescurtiu(filme.getDescurtiu() + 1);
+                }
+                System.out.println("Que bom  que gostou, o filme tem " + filme.getCurtiu() + " curtida(s).");
+
+        }
+
         public static void escolheFilme(Usuario usuario, Filme filme) {
                 System.out.println(" ");
-                System.out.println(usuario.toString() + " esta assistindo " + filme.toString());
+                System.out.println(usuario.getNome() + " esta assistindo " + filme.getNome());
                 System.out.println(" ");
 
         }
@@ -39,11 +50,19 @@ public class Main {
                 Filme f4 = new Filme();
                 f4.setNome("Homem de Ferro");
 
-                System.out.println("Escolha opção:");
+                System.out.println("Para assistir um filme digite 1");
                 opcao = Integer.parseInt(inicio.nextLine());
 
                 if (opcao == 1) {
                         escolheFilme(u1, f1);
+                        System.out.println("Voce curtiu este filme?");
+                        System.out.println("1 - SIM | 2 = NAO ");
+                        opcao = Integer.parseInt(inicio.nextLine());
+                        if (opcao == 1) {
+                                curtirDescurtir(u1, f1, true);
+                        } else {
+                                curtirDescurtir(u1, f1, false);
+                        }
                 }
                 inicio.close();
 
