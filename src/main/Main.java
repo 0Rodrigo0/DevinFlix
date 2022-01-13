@@ -35,6 +35,7 @@ public class Main {
 
         public static void recomendar(Recomendado filme, Recomendado usuarioQueRecomenda, Recomendado texto,
                         Recomendado usuarioRecomnedado) {
+
                 System.out.println("O filme " + filme.getFilme() + " foi recomendado por "
                                 + usuarioQueRecomenda.getUsuarioQueRecomenda() + ":"
                                 + texto.getTexto() + "" + usuarioRecomnedado.getUsuarioRecomnedado() + ".");
@@ -75,39 +76,50 @@ public class Main {
 
                 Sugerido s1 = new Sugerido();
                 s1.setNome("Shazam");
-                s1.setSinopse("Filme do homem que tem poderes de Raio.");
+                s1.setSinopse("Filme do homem que tem poderes de raio.");
                 s1.setAnoLancamento(LocalDate.of(1970, 2, 2));
                 s1.setGenero(Genero.ACAO);
 
-                System.out.println("Para assistir um filme digite 1");
-                System.out.println("Para sugerir um Título digite 2");
-                opcao = Integer.parseInt(inicio.nextLine());
-
-                if (opcao == 1) {
-                        escolheFilme(u1, f1);
-                        System.out.println("Voce curtiu este filme?");
-                        System.out.println("1 - SIM | 2 = NAO ");
+                do {
+                        System.out.println("Para assistir um filme digite 1");
+                        System.out.println("Para sugerir um Título digite 2");
+                        System.out.println("Para sair 9");
                         opcao = Integer.parseInt(inicio.nextLine());
+
                         if (opcao == 1) {
-                                curtirDescurtir(u1, f1, true);
-                                System.out.println("");
-                                System.out.println("Já que você curtiu, deseja recomendar?");
+                                escolheFilme(u1, f1);
+                                System.out.println("Voce curtiu este filme?");
                                 System.out.println("1 - SIM | 2 = NAO ");
                                 opcao = Integer.parseInt(inicio.nextLine());
                                 if (opcao == 1) {
+                                        curtirDescurtir(u1, f1, true);
                                         System.out.println("");
-                                        recomendar(r1, r1, r1, r1);
+                                        System.out.println("Já que você curtiu, deseja recomendar?");
+                                        System.out.println("1 - SIM | 2 = NAO ");
+                                        opcao = Integer.parseInt(inicio.nextLine());
+                                        if (opcao == 1) {
+                                                System.out.println("");
+                                                recomendar(r1, r1, r1, r1);
+                                        }
+
                                 }
-
-                        } else {
-                                curtirDescurtir(u1, f1, false);
+                                if (opcao == 2) {
+                                        curtirDescurtir(u1, f1, false);
+                                }
                         }
-                }
-                if (opcao == 2) {
+                        if (opcao == 2) {
+                                LocalDate localDate = LocalDate.now();
+                                System.out.println("Dia da sugestão: " + localDate);
+                                System.out.println(" ");
+                                sugerirFilme(s1, s1, Genero.ACAO, s1);
 
-                        sugerirFilme(s1, s1, Genero.ACAO, s1);
+                                localDate = localDate.plusDays(30);
+                                System.out.println(" ");
+                                System.out.println("Voce só pode sugerir novamente " + localDate);
+                                System.out.println(" ");
 
-                }
+                        }
+                } while (opcao != 9);
                 inicio.close();
 
         }
