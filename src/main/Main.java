@@ -108,15 +108,17 @@ public class Main {
                                 }
                         }
                         if (opcao == 2) {
+                                System.out.println(" ");
                                 LocalDate localDate = LocalDate.now();
-                                System.out.println("Dia da sugestão: " + localDate);
+                                u1.setDataIndicouFilme(localDate);
+                                System.out.println("Dia da sugestão: " + u1.getDataIndicouFilme());
                                 System.out.println(" ");
                                 sugerirFilme(s1, s1, Genero.ACAO, s1);
 
                                 localDate = localDate.plusDays(30);
+                                u1.setDataProximaIndicacao(localDate);
                                 System.out.println(" ");
-                                System.out.println("Voce só pode sugerir novamente " + localDate);
-                                System.out.println(" ");
+                                System.out.println("Voce só pode sugerir novamente " + u1.getDataProximaIndicacao());
 
                         }
                 } while (opcao != 9);

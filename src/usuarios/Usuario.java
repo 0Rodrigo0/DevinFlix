@@ -7,6 +7,24 @@ public class Usuario {
     private String nome;
     private String endereco;
     private LocalDate dataNascimento;
+    private LocalDate dataIndicouFilme;
+    private LocalDate dataProximaIndicacao;
+
+    public LocalDate getDataProximaIndicacao() {
+        return dataProximaIndicacao;
+    }
+
+    public void setDataProximaIndicacao(LocalDate dataProximaIndicacao) {
+        this.dataProximaIndicacao = dataProximaIndicacao;
+    }
+
+    public LocalDate getDataIndicouFilme() {
+        return dataIndicouFilme;
+    }
+
+    public void setDataIndicouFilme(LocalDate dataIndicouFilme) {
+        this.dataIndicouFilme = dataIndicouFilme;
+    }
 
     public String getNome() {
         return nome;
