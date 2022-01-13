@@ -1,28 +1,26 @@
 package recomendados;
 
-import filmes.Filme;
-import usuarios.Usuario;
-
 public class Recomendado {
 
-    private Filme filme;
-    private Usuario usuario;
+    private String filme;
+    private String usuarioQueRecomenda;
     private String texto;
+    private String usuarioRecomnedado;
 
-    public Filme getFilme() {
+    public String getFilme() {
         return filme;
     }
 
-    public void setFilme(Filme filme) {
+    public void setFilme(String filme) {
         this.filme = filme;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public String getUsuarioQueRecomenda() {
+        return usuarioQueRecomenda;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsuarioQueRecomenda(String usuarioQueRecomenda) {
+        this.usuarioQueRecomenda = usuarioQueRecomenda;
     }
 
     public String getTexto() {
@@ -31,6 +29,20 @@ public class Recomendado {
 
     public void setTexto(String texto) {
         this.texto = texto;
+    }
+
+    public String getUsuarioRecomnedado() {
+        return usuarioRecomnedado;
+    }
+
+    public void setUsuarioRecomnedado(String usuarioRecomnedado) {
+        this.usuarioRecomnedado = usuarioRecomnedado;
+    }
+
+    @Override
+    public String toString() {
+        return "Recomendado [filme=" + filme + ", texto=" + texto + ", usuarioQueRecomenda=" + usuarioQueRecomenda
+                + ", usuarioRecomnedado=" + usuarioRecomnedado + "]";
     }
 
 }

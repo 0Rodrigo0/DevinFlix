@@ -1,6 +1,5 @@
 package filmes;
 
-import java.net.URL;
 import java.time.LocalDate;
 
 public class Filme {
@@ -8,7 +7,7 @@ public class Filme {
     private String nome;
     private String sinopse;
     private Genero genero;
-    private URL link;
+    private String link;
     private LocalDate anoLancamento;
     private Integer curtiu = 0;
     private Integer descurtiu = 0;
@@ -61,11 +60,11 @@ public class Filme {
         this.genero = genero;
     }
 
-    public URL getLink() {
+    public String getLink() {
         return link;
     }
 
-    public void setLink(URL link) {
+    public void setLink(String link) {
         this.link = link;
     }
 

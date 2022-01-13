@@ -3,6 +3,7 @@ package main;
 import java.util.Scanner;
 import java.time.LocalDate;
 import filmes.Filme;
+import recomendados.Recomendado;
 import usuarios.Usuario;
 
 public class Main {
@@ -15,10 +16,11 @@ public class Main {
 
                 if (curtir == true) {
                         filme.setCurtiu(filme.getCurtiu() + 1);
+                        System.out.println("Que bom  que gostou, o filme tem " + filme.getCurtiu() + " curtida(s).");
                 } else {
                         filme.setDescurtiu(filme.getDescurtiu() + 1);
+                        System.out.println("Que pena, o filme tem " + filme.getDescurtiu() + " descurtida(s).");
                 }
-                System.out.println("Que bom  que gostou, o filme tem " + filme.getCurtiu() + " curtida(s).");
 
         }
 
@@ -27,6 +29,13 @@ public class Main {
                 System.out.println(usuario.getNome() + " esta assistindo " + filme.getNome());
                 System.out.println(" ");
 
+        }
+
+        public static void recomendar(Recomendado filme, Recomendado usuarioQueRecomenda, Recomendado texto,
+                        Recomendado usuarioRecomnedado) {
+                System.out.println("O filme " + filme.getFilme() + " foi recomendado por "
+                                + usuarioQueRecomenda.getUsuarioQueRecomenda() + ":"
+                                + texto.getTexto() + "" + usuarioRecomnedado.getUsuarioRecomnedado() + ".");
         }
 
         public static void devinFlix() {
@@ -50,6 +59,12 @@ public class Main {
                 Filme f4 = new Filme();
                 f4.setNome("Homem de Ferro");
 
+                Recomendado r1 = new Recomendado();
+                r1.setFilme(f1.getNome());
+                r1.setUsuarioQueRecomenda(u1.getNome());
+                r1.setTexto(" este filme é otimo, olhe ele ");
+                r1.setUsuarioRecomnedado(u2.getNome());
+
                 System.out.println("Para assistir um filme digite 1");
                 opcao = Integer.parseInt(inicio.nextLine());
 
@@ -60,12 +75,26 @@ public class Main {
                         opcao = Integer.parseInt(inicio.nextLine());
                         if (opcao == 1) {
                                 curtirDescurtir(u1, f1, true);
+                                System.out.println("");
+                                System.out.println("Já que você curtiu, deseja recomendar?");
+                                System.out.println("1 - SIM | 2 = NAO ");
+                                opcao = Integer.parseInt(inicio.nextLine());
+                                if (opcao == 1) {
+                                        System.out.println("");
+                                        recomendar(r1, r1, r1, r1);
+
+                                }
+
                         } else {
                                 curtirDescurtir(u1, f1, false);
                         }
                 }
                 inicio.close();
 
+        }
+
+        private static char[] recomendar() {
+                return null;
         }
 
 }
