@@ -3,6 +3,8 @@ package main;
 import java.util.Scanner;
 import java.time.LocalDate;
 import filmes.Filme;
+import filmes.Genero;
+import filmes.Sugerido;
 import recomendados.Recomendado;
 import usuarios.Usuario;
 
@@ -38,6 +40,12 @@ public class Main {
                                 + texto.getTexto() + "" + usuarioRecomnedado.getUsuarioRecomnedado() + ".");
         }
 
+        public static void sugerirFilme(Sugerido nome, Sugerido sinopse, Genero genero, Sugerido anoLancamento) {
+                System.out.println("Você sugeriu o filme " + nome.getNome() + "\n" + "Sinopse: "
+                                + sinopse.getSinopse() + "\n"
+                                + " Genero:" + genero + "\n" + " Lançado em: " + anoLancamento.getAnoLancamento());
+        }
+
         public static void devinFlix() {
 
                 Scanner inicio = new Scanner(System.in);
@@ -62,10 +70,17 @@ public class Main {
                 Recomendado r1 = new Recomendado();
                 r1.setFilme(f1.getNome());
                 r1.setUsuarioQueRecomenda(u1.getNome());
-                r1.setTexto(" este filme é otimo, olhe ele ");
+                r1.setTexto(" Este filme é otimo, olhe ele ");
                 r1.setUsuarioRecomnedado(u2.getNome());
 
+                Sugerido s1 = new Sugerido();
+                s1.setNome("Shazam");
+                s1.setSinopse("Filme do homem que tem poderes de Raio.");
+                s1.setAnoLancamento(LocalDate.of(1970, 2, 2));
+                s1.setGenero(Genero.ACAO);
+
                 System.out.println("Para assistir um filme digite 1");
+                System.out.println("Para sugerir um Título digite 2");
                 opcao = Integer.parseInt(inicio.nextLine());
 
                 if (opcao == 1) {
@@ -82,12 +97,16 @@ public class Main {
                                 if (opcao == 1) {
                                         System.out.println("");
                                         recomendar(r1, r1, r1, r1);
-
                                 }
 
                         } else {
                                 curtirDescurtir(u1, f1, false);
                         }
+                }
+                if (opcao == 2) {
+
+                        sugerirFilme(s1, s1, Genero.ACAO, s1);
+
                 }
                 inicio.close();
 
