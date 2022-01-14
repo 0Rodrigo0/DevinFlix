@@ -11,7 +11,7 @@ public class Sugerido extends Filme {
 
     public Sugerido(String nome, String sinopse, Genero genero, String link, LocalDate anoLancamento) {
         super(nome, sinopse, genero, link, anoLancamento);
-        // TODO Auto-generated constructor stub
+
     }
 
     @Override

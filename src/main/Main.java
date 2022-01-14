@@ -1,12 +1,9 @@
 package main;
 
-import java.util.Random;
 import java.util.Scanner;
 import java.time.LocalDate;
 import filmes.Filme;
 import filmes.Genero;
-import filmes.Sugerido;
-import recomendados.Recomendado;
 import usuarios.Usuario;
 
 public class Main {
@@ -38,6 +35,8 @@ public class Main {
 
                 Scanner inicio = new Scanner(System.in);
                 int opcao = 0;
+                String texto;
+                boolean existe = false;
 
                 Usuario lu[] = new Usuario[5];
                 lu[0] = new Usuario("Joao", "Rua 123", LocalDate.of(1991, 1, 1));
@@ -58,21 +57,33 @@ public class Main {
                 lf[4] = new Filme("Lagoa Azul", "Filme do homem loiro que salva a ilha", Genero.TERROR, "lagoa.com",
                                 LocalDate.of(1990, 10, 10));
 
+                System.out.println("****** DevinFlix ******");
                 do {
-                        System.out.println("Usuarios 1");
-                        System.out.println("filmes 2");
-                        System.out.println("Para sair 9");
+
+                        System.out.println("Usuario:");
+                        texto = inicio.nextLine();
+                        System.out.println("");
+                        for (int i = 0; i < lu.length; i++) {
+                                if (lu[i].getNome().equals(texto)) {
+                                        existe = true;
+                                }
+                        }
+                } while (existe != true);
+
+                do {
+                        System.out.println("Ola " + texto + " escolha o filme digitando o nome, ou 9 sair.");
+                        System.out.println("");
+                        for (int i = 0; i < lu.length; i++)
+                                System.out.println(lf[i]);
+                        System.out.println("");
                         opcao = Integer.parseInt(inicio.nextLine());
 
                         if (opcao == 1) {
-
                                 for (int i = 0; i < lu.length; i++)
                                         System.out.println(lu[i]);
                         }
                         if (opcao == 2) {
 
-                                for (int i = 0; i < lf.length; i++)
-                                        System.out.println(lf[i]);
                         }
                 } while (opcao != 9);
                 inicio.close();

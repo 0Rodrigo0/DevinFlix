@@ -79,8 +79,8 @@ public class Filme {
 
     @Override
     public String toString() {
-        return "Filme: " + nome + "\n" + "Lançado em: " + anoLancamento + "\n" + "Sinopse: " + sinopse + "\n"
-                + "Genero: " + genero + "\n" + "Link: " + link + "\n";
+        return "Filme: " + nome + "  " + "Lançado em: " + anoLancamento + "\n" + "Sinopse: " + sinopse + "\n"
+                + "Genero: " + genero + "  " + "Link: " + link + "\n";
     }
 
 }
