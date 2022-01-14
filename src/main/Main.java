@@ -69,25 +69,23 @@ public class Main {
                                 }
                         }
                 } while (existe != true);
+                System.out.println("Sucesso!");
+                System.out.println("");
 
                 do {
                         System.out.println("Ola " + texto + " escolha o filme digitando o nome, ou 9 sair.");
                         System.out.println("");
                         for (int i = 0; i < lu.length; i++)
                                 System.out.println(lf[i]);
+
                         System.out.println("");
                         opcao = Integer.parseInt(inicio.nextLine());
 
-                        if (opcao == 1) {
-                                for (int i = 0; i < lu.length; i++)
-                                        System.out.println(lu[i]);
-                        }
-                        if (opcao == 2) {
+                        
 
                         }
-                } while (opcao != 9);
-                inicio.close();
+                }while(opcao!=9);inicio.close();
 
-        }
+}
 
 }
