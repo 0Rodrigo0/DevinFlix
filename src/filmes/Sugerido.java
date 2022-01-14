@@ -9,6 +9,11 @@ public class Sugerido extends Filme {
     private Genero genero;
     private LocalDate anoLancamento;
 
+    public Sugerido(String nome, String sinopse, Genero genero, String link, LocalDate anoLancamento) {
+        super(nome, sinopse, genero, link, anoLancamento);
+        // TODO Auto-generated constructor stub
+    }
+
     @Override
     public String toString() {
         return "Sugerido anoLancamento=" + anoLancamento + ", genero=" + genero + ", nome=" + nome + ", sinopse="

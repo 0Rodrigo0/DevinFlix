@@ -1,5 +1,6 @@
 package main;
 
+import java.util.Random;
 import java.util.Scanner;
 import java.time.LocalDate;
 import filmes.Filme;
@@ -33,93 +34,45 @@ public class Main {
 
         }
 
-        public static void recomendar(Recomendado filme, Recomendado usuarioQueRecomenda, Recomendado texto,
-                        Recomendado usuarioRecomnedado) {
-
-                System.out.println("O filme " + filme.getFilme() + " foi recomendado por "
-                                + usuarioQueRecomenda.getUsuarioQueRecomenda() + ":"
-                                + texto.getTexto() + "" + usuarioRecomnedado.getUsuarioRecomnedado() + ".");
-        }
-
-        public static void sugerirFilme(Sugerido nome, Sugerido sinopse, Genero genero, Sugerido anoLancamento) {
-                System.out.println("Você sugeriu o filme " + nome.getNome() + "\n" + "Sinopse: "
-                                + sinopse.getSinopse() + "\n"
-                                + " Genero:" + genero + "\n" + " Lançado em: " + anoLancamento.getAnoLancamento());
-        }
-
         public static void devinFlix() {
 
                 Scanner inicio = new Scanner(System.in);
                 int opcao = 0;
 
-                Usuario u1 = new Usuario();
-                u1.setNome("Joao");
-                u1.setDataNascimento(LocalDate.of(1990, 1, 1));
-                Usuario u2 = new Usuario();
-                u2.setNome("Pedro");
-                u2.setDataNascimento(LocalDate.of(1980, 1, 1));
+                Usuario lu[] = new Usuario[5];
+                lu[0] = new Usuario("Joao", "Rua 123", LocalDate.of(1991, 1, 1));
+                lu[1] = new Usuario("Pedro", "Rua 456", LocalDate.of(1992, 2, 2));
+                lu[2] = new Usuario("Jorge", "Rua 789", LocalDate.of(1993, 3, 3));
+                lu[3] = new Usuario("Silva", "Rua 741", LocalDate.of(1994, 4, 4));
+                lu[4] = new Usuario("Lucas", "Rua 852", LocalDate.of(1995, 5, 5));
 
-                Filme f1 = new Filme();
-                f1.setNome("Batman");
-                Filme f2 = new Filme();
-                f2.setNome("Jason");
-                Filme f3 = new Filme();
-                f3.setNome("Superman");
-                Filme f4 = new Filme();
-                f4.setNome("Homem de Ferro");
-
-                Recomendado r1 = new Recomendado();
-                r1.setFilme(f1.getNome());
-                r1.setUsuarioQueRecomenda(u1.getNome());
-                r1.setTexto(" Este filme é otimo, olhe ele ");
-                r1.setUsuarioRecomnedado(u2.getNome());
-
-                Sugerido s1 = new Sugerido();
-                s1.setNome("Shazam");
-                s1.setSinopse("Filme do homem que tem poderes de raio.");
-                s1.setAnoLancamento(LocalDate.of(1970, 2, 2));
-                s1.setGenero(Genero.ACAO);
+                Filme lf[] = new Filme[5];
+                lf[0] = new Filme("Batman", "Filme do homem morcego que salva a cidade", Genero.ACAO, "batman.com",
+                                LocalDate.of(1950, 10, 10));
+                lf[1] = new Filme("Hulk", "Filme do homem verde que salva a cidade", Genero.ROAMNCE, "hulk.com",
+                                LocalDate.of(1960, 10, 10));
+                lf[2] = new Filme("Filme do Pelé", "Filme do homem jogador que salva a cidade", Genero.COMEDIA,
+                                "pele.com", LocalDate.of(1970, 10, 10));
+                lf[3] = new Filme("Xuxa", "Filme da mulher que salva a cidade", Genero.FICCAO, "xuxa.com",
+                                LocalDate.of(1980, 10, 10));
+                lf[4] = new Filme("Lagoa Azul", "Filme do homem loiro que salva a ilha", Genero.TERROR, "lagoa.com",
+                                LocalDate.of(1990, 10, 10));
 
                 do {
-                        System.out.println("Para assistir um filme digite 1");
-                        System.out.println("Para sugerir um Título digite 2");
+                        System.out.println("Usuarios 1");
+                        System.out.println("filmes 2");
                         System.out.println("Para sair 9");
                         opcao = Integer.parseInt(inicio.nextLine());
 
                         if (opcao == 1) {
-                                escolheFilme(u1, f1);
-                                System.out.println("Voce curtiu este filme?");
-                                System.out.println("1 - SIM | 2 = NAO ");
-                                opcao = Integer.parseInt(inicio.nextLine());
-                                if (opcao == 1) {
-                                        curtirDescurtir(u1, f1, true);
-                                        System.out.println("");
-                                        System.out.println("Já que você curtiu, deseja recomendar?");
-                                        System.out.println("1 - SIM | 2 = NAO ");
-                                        opcao = Integer.parseInt(inicio.nextLine());
-                                        if (opcao == 1) {
-                                                System.out.println("");
-                                                recomendar(r1, r1, r1, r1);
-                                        }
 
-                                }
-                                if (opcao == 2) {
-                                        curtirDescurtir(u1, f1, false);
-                                }
+                                for (int i = 0; i < lu.length; i++)
+                                        System.out.println(lu[i]);
                         }
                         if (opcao == 2) {
-                                System.out.println(" ");
-                                LocalDate localDate = LocalDate.now();
-                                u1.setDataIndicouFilme(localDate);
-                                System.out.println("Dia da sugestão: " + u1.getDataIndicouFilme());
-                                System.out.println(" ");
-                                sugerirFilme(s1, s1, Genero.ACAO, s1);
 
-                                localDate = localDate.plusDays(30);
-                                u1.setDataProximaIndicacao(localDate);
-                                System.out.println(" ");
-                                System.out.println("Voce só pode sugerir novamente " + u1.getDataProximaIndicacao());
-
+                                for (int i = 0; i < lf.length; i++)
+                                        System.out.println(lf[i]);
                         }
                 } while (opcao != 9);
                 inicio.close();

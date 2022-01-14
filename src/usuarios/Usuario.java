@@ -10,20 +10,10 @@ public class Usuario {
     private LocalDate dataIndicouFilme;
     private LocalDate dataProximaIndicacao;
 
-    public LocalDate getDataProximaIndicacao() {
-        return dataProximaIndicacao;
-    }
-
-    public void setDataProximaIndicacao(LocalDate dataProximaIndicacao) {
-        this.dataProximaIndicacao = dataProximaIndicacao;
-    }
-
-    public LocalDate getDataIndicouFilme() {
-        return dataIndicouFilme;
-    }
-
-    public void setDataIndicouFilme(LocalDate dataIndicouFilme) {
-        this.dataIndicouFilme = dataIndicouFilme;
+    public Usuario(String nome, String endereco, LocalDate dataNascimento) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.dataNascimento = dataNascimento;
     }
 
     public String getNome() {
@@ -50,9 +40,25 @@ public class Usuario {
         this.dataNascimento = dataNascimento;
     }
 
+    public LocalDate getDataIndicouFilme() {
+        return dataIndicouFilme;
+    }
+
+    public void setDataIndicouFilme(LocalDate dataIndicouFilme) {
+        this.dataIndicouFilme = dataIndicouFilme;
+    }
+
+    public LocalDate getDataProximaIndicacao() {
+        return dataProximaIndicacao;
+    }
+
+    public void setDataProximaIndicacao(LocalDate dataProximaIndicacao) {
+        this.dataProximaIndicacao = dataProximaIndicacao;
+    }
+
     @Override
     public String toString() {
-        return "Usuario dataNascimento=" + dataNascimento + ", endereco=" + endereco + ", nome=" + nome;
+        return "Nome: " + nome + "\n" + "Endereco: " + endereco + "\n" + "Data de nascimento: " + dataNascimento + "\n";
     }
 
 }
