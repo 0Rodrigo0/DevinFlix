@@ -81,11 +81,9 @@ public class Main {
                         System.out.println("");
                         opcao = Integer.parseInt(inicio.nextLine());
 
-                        
+                } while (opcao != 9);
+                inicio.close();
 
-                        }
-                }while(opcao!=9);inicio.close();
-
-}
+        }
 
 }
