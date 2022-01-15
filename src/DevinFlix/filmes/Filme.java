@@ -9,21 +9,20 @@ public class Filme {
     private Genero genero;
     private String link;
     private LocalDate anoLancamento;
+    private String recomendado;
     private Integer curtiu = 0;
     private Integer descurtiu = 0;
 
     public Filme() {
     }
 
-    public Filme(String nome, String sinopse, Genero genero, String link, LocalDate anoLancamento, Integer curtiu,
-            Integer descurtiu) {
+    public Filme(String nome, String sinopse, Genero genero, String link, LocalDate anoLancamento) {
         this.nome = nome;
         this.sinopse = sinopse;
         this.genero = genero;
         this.link = link;
         this.anoLancamento = anoLancamento;
-        this.curtiu = curtiu;
-        this.descurtiu = descurtiu;
+
     }
 
     public String getNome() {
@@ -64,6 +63,14 @@ public class Filme {
 
     public void setAnoLancamento(LocalDate anoLancamento) {
         this.anoLancamento = anoLancamento;
+    }
+
+    public String getRecomendado() {
+        return recomendado;
+    }
+
+    public void setRecomendado(String recomendado) {
+        this.recomendado = recomendado;
     }
 
     public Integer getCurtiu() {

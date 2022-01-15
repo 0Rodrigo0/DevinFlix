@@ -5,16 +5,16 @@ import java.time.LocalDate;
 public class Usuario {
 
     private String nome;
-    private LocalDate dataNascimento;
     private String endereco;
+    private LocalDate dataNascimento;
 
     public Usuario() {
     }
 
-    public Usuario(String nome, LocalDate dataNascimento, String endereco) {
+    public Usuario(String nome, String endereco, LocalDate dataNascimento) {
         this.nome = nome;
-        this.dataNascimento = dataNascimento;
         this.endereco = endereco;
+        this.dataNascimento = dataNascimento;
     }
 
     public String getNome() {
