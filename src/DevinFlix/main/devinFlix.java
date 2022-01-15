@@ -1,7 +1,7 @@
 package DevinFlix.main;
 
-import DevinFlix.filme.Filme;
-import DevinFlix.usuario.Usuario;
+import DevinFlix.filmes.Filme;
+import DevinFlix.usuarios.Usuario;
 
 public class devinFlix {
 

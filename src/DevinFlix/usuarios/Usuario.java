@@ -1,4 +1,4 @@
-package DevinFlix.usuario;
+package DevinFlix.usuarios;
 
 import java.time.LocalDate;
 
