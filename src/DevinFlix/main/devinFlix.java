@@ -24,8 +24,9 @@ public class devinFlix {
 
     public static void recomendaFilme(Recomendar recomendar) {
 
-        if (Usuario.getDataIndicou().equals(LocalDate.now())) {
-
+        if (Usuario.getDataIndicou() == null) {
+            Usuario.setDataIndicou(LocalDate.now());
+            Usuario.setDataProximaIndicacao(LocalDate.now().plusDays(30));
             recomendar.setUsuarioIndica(recomendar.getUsuarioIndica());
             recomendar.setUsuarioIndicado(recomendar.getUsuarioIndicado());
             recomendar.setFilme(recomendar.getFilme());

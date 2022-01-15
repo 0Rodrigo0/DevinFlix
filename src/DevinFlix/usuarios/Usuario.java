@@ -7,7 +7,7 @@ public class Usuario {
     private String nome;
     private String endereco;
     private LocalDate dataNascimento;
-    private static LocalDate dataIndicou = LocalDate.of(2021, 01, 01);
+    private static LocalDate dataIndicou = null;
     private static LocalDate dataProximaIndicacao = null;
 
     public Usuario() {
@@ -47,7 +47,7 @@ public class Usuario {
         return dataIndicou;
     }
 
-    public void setDataIndicou(LocalDate dataIndicou) {
+    public static void setDataIndicou(LocalDate dataIndicou) {
         Usuario.dataIndicou = dataIndicou;
     }
 
