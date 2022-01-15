@@ -89,4 +89,11 @@ public class Filme {
         this.descurtiu = descurtiu;
     }
 
+    @Override
+    public String toString() {
+        return "Nome: " + nome + ". Lancamento: " + anoLancamento + ". Genero: " + genero + ". Sinopse: " + sinopse
+                + "\n" + "Link: " + link + " Recomendado: =" + recomendado + " vezes." + "\n" +
+                "Curtidas: " + curtiu + ", Descurtidas: " + descurtiu + "\n";
+    }
+
 }

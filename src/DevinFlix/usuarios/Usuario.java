@@ -7,6 +7,8 @@ public class Usuario {
     private String nome;
     private String endereco;
     private LocalDate dataNascimento;
+    private static LocalDate dataIndicou = LocalDate.of(2021, 01, 01);
+    private static LocalDate dataProximaIndicacao = null;
 
     public Usuario() {
     }
@@ -25,6 +27,14 @@ public class Usuario {
         this.nome = nome;
     }
 
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
     public LocalDate getDataNascimento() {
         return dataNascimento;
     }
@@ -33,12 +43,20 @@ public class Usuario {
         this.dataNascimento = dataNascimento;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public static LocalDate getDataIndicou() {
+        return dataIndicou;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setDataIndicou(LocalDate dataIndicou) {
+        Usuario.dataIndicou = dataIndicou;
+    }
+
+    public static LocalDate getDataProximaIndicacao() {
+        return dataProximaIndicacao;
+    }
+
+    public static void setDataProximaIndicacao(LocalDate dataProximaIndicacao) {
+        Usuario.dataProximaIndicacao = dataProximaIndicacao;
     }
 
 }

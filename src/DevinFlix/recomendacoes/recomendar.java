@@ -1,20 +1,21 @@
 package DevinFlix.recomendacoes;
 
 import DevinFlix.filmes.Filme;
+import DevinFlix.usuarios.Usuario;
 
-public class recomendar {
+public class Recomendar extends Usuario {
 
     private String usuarioIndica;
-    private String usuarioIndicou;
+    private String usuarioIndicado;
     private Filme filme;
     private String texto;
 
-    public recomendar() {
+    public Recomendar() {
     }
 
-    public recomendar(String usuarioIndica, String usuarioIndicou, Filme filme, String texto) {
+    public Recomendar(String usuarioIndica, String usuarioIndicado, Filme filme, String texto) {
         this.usuarioIndica = usuarioIndica;
-        this.usuarioIndicou = usuarioIndicou;
+        this.usuarioIndicado = usuarioIndicado;
         this.filme = filme;
         this.texto = texto;
     }
@@ -27,12 +28,12 @@ public class recomendar {
         this.usuarioIndica = usuarioIndica;
     }
 
-    public String getUsuarioIndicou() {
-        return usuarioIndicou;
+    public String getUsuarioIndicado() {
+        return usuarioIndicado;
     }
 
-    public void setUsuarioIndicou(String usuarioIndicou) {
-        this.usuarioIndicou = usuarioIndicou;
+    public void setUsuarioIndicado(String usuarioIndicado) {
+        this.usuarioIndicado = usuarioIndicado;
     }
 
     public Filme getFilme() {
@@ -49,6 +50,12 @@ public class recomendar {
 
     public void setTexto(String texto) {
         this.texto = texto;
+    }
+
+    @Override
+    public String toString() {
+        return "Filme: " + filme.getNome() + "Texto: " + texto
+                + ". Quem indicou: " + usuarioIndica + ". Para: " + usuarioIndicado;
     }
 
 }

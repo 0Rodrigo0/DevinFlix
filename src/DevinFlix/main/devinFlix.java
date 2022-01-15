@@ -5,11 +5,12 @@ import java.util.Scanner;
 
 import DevinFlix.filmes.Filme;
 import DevinFlix.filmes.Genero;
+import DevinFlix.recomendacoes.Recomendar;
 import DevinFlix.usuarios.Usuario;
 
 public class devinFlix {
 
-    public static void curtirDescurtir(Usuario usuario, Filme filme, boolean curtir) {
+    public void curtirDescurtir(Usuario usuario, Filme filme, boolean curtir) {
 
         if (curtir == true) {
             filme.setCurtiu(filme.getCurtiu() + 1);
@@ -17,6 +18,22 @@ public class devinFlix {
         } else {
             filme.setDescurtiu(filme.getDescurtiu() + 1);
             System.out.println("Que pena, o filme tem " + filme.getDescurtiu() + " descurtida(s).");
+        }
+
+    }
+
+    public static void recomendaFilme(Recomendar recomendar) {
+
+        if (Usuario.getDataIndicou().equals(LocalDate.now())) {
+
+            recomendar.setUsuarioIndica(recomendar.getUsuarioIndica());
+            recomendar.setUsuarioIndicado(recomendar.getUsuarioIndicado());
+            recomendar.setFilme(recomendar.getFilme());
+            recomendar.setTexto(recomendar.getTexto());
+            System.out.println(recomendar.getUsuarioIndica() + " recomenda para " + recomendar.getUsuarioIndicado()
+                    + " o filme " + recomendar.getFilme() + recomendar.getTexto());
+        } else {
+            System.out.println("Você só pode recomendar após " + Usuario.getDataProximaIndicacao());
         }
 
     }
@@ -43,6 +60,19 @@ public class devinFlix {
                 LocalDate.of(1980, 10, 10));
         lf[4] = new Filme("Lagoa Azul", "Filme do homem loiro que salva a ilha.", Genero.TERROR, "lagoa.com",
                 LocalDate.of(1990, 10, 10));
+
+        Recomendar r1 = new Recomendar();
+        r1.setUsuarioIndica(lu[4].getNome());
+        r1.setUsuarioIndicado(lu[2].getNome());
+        r1.setFilme(lf[4]);
+        r1.setTexto("O filme é otimo, vale a pena ver");
+
+        Recomendar r2 = new Recomendar(lu[1].getNome(), lu[2].getNome(), lf[4],
+                "O filme é otimo, vale a pena ver");
+
+        recomendaFilme(r2);
+
+        inicio.close();
     }
 
 }
