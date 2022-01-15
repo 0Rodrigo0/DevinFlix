@@ -1,4 +1,4 @@
-package filmes;
+package DevinFlix.filme;
 
 import java.time.LocalDate;
 
@@ -12,36 +12,17 @@ public class Filme {
     private Integer curtiu = 0;
     private Integer descurtiu = 0;
 
-    public Filme(String nome, String sinopse, Genero genero, String link, LocalDate anoLancamento) {
+    public Filme() {
+    }
+
+    public Filme(String nome, String sinopse, Genero genero, String link, LocalDate anoLancamento, Integer curtiu,
+            Integer descurtiu) {
         this.nome = nome;
         this.sinopse = sinopse;
         this.genero = genero;
         this.link = link;
         this.anoLancamento = anoLancamento;
-
-    }
-
-    public LocalDate getAnoLancamento() {
-        return anoLancamento;
-    }
-
-    public void setAnoLancamento(LocalDate anoLancamento) {
-        this.anoLancamento = anoLancamento;
-    }
-
-    public Integer getCurtiu() {
-        return curtiu;
-    }
-
-    public void setCurtiu(Integer curtiu) {
         this.curtiu = curtiu;
-    }
-
-    public Integer getDescurtiu() {
-        return descurtiu;
-    }
-
-    public void setDescurtiu(Integer descurtiu) {
         this.descurtiu = descurtiu;
     }
 
@@ -77,10 +58,28 @@ public class Filme {
         this.link = link;
     }
 
-    @Override
-    public String toString() {
-        return "Filme: " + nome + "\n" + "Lançado em: " + anoLancamento + "  " + "Sinopse: " + sinopse + "  "
-                + "Genero: " + genero + "  " + "Link: " + link + "\n";
+    public LocalDate getAnoLancamento() {
+        return anoLancamento;
+    }
+
+    public void setAnoLancamento(LocalDate anoLancamento) {
+        this.anoLancamento = anoLancamento;
+    }
+
+    public Integer getCurtiu() {
+        return curtiu;
+    }
+
+    public void setCurtiu(Integer curtiu) {
+        this.curtiu = curtiu;
+    }
+
+    public Integer getDescurtiu() {
+        return descurtiu;
+    }
+
+    public void setDescurtiu(Integer descurtiu) {
+        this.descurtiu = descurtiu;
     }
 
 }

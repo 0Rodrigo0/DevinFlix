@@ -1,4 +1,4 @@
-package filmes;
+package DevinFlix.filme;
 
 public enum Genero {
 
