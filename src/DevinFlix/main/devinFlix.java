@@ -22,7 +22,7 @@ public class devinFlix {
 
     }
 
-    public static void recomendaFilme(Usuario usuario, Filme filme, boolean recomenda) {
+    public static void podeRecomendaFilme(Usuario usuario, Filme filme, boolean recomenda) {
 
         long diferencaEmDias = ChronoUnit.DAYS.between(usuario.getDataIndicou(), LocalDate.now());
         if (diferencaEmDias > 30) {
@@ -65,12 +65,12 @@ public class devinFlix {
         lf[4] = new Filme("Lagoa Azul", "Filme do homem loiro que salva a ilha.", Genero.TERROR, "lagoa.com",
                 LocalDate.of(1990, 10, 10));
 
-        // teste recomenda
-        recomendaFilme(lu[0], lf[0], true);
-        recomendaFilme(lu[1], lf[1], true);
-        recomendaFilme(lu[2], lf[2], true);
-        recomendaFilme(lu[3], lf[3], true);
-        recomendaFilme(lu[4], lf[4], true);
+        // teste se pode recomendar
+        podeRecomendaFilme(lu[0], lf[0], true);
+        podeRecomendaFilme(lu[1], lf[1], true);
+        podeRecomendaFilme(lu[2], lf[2], true);
+        podeRecomendaFilme(lu[3], lf[3], true);
+        podeRecomendaFilme(lu[4], lf[4], true);
         System.out.println(lu[0].getDataProximaIndicacao().toString());
         System.out.println(lu[1].getDataProximaIndicacao().toString());
         System.out.println(lu[2].getDataProximaIndicacao().toString());
