@@ -7,16 +7,19 @@ public class Usuario {
     private String nome;
     private String endereco;
     private LocalDate dataNascimento;
-    private static LocalDate dataIndicou = null;
-    private static LocalDate dataProximaIndicacao = null;
+    private LocalDate dataIndicou = null;
+    private LocalDate dataProximaIndicacao = null;
 
     public Usuario() {
     }
 
-    public Usuario(String nome, String endereco, LocalDate dataNascimento) {
+    public Usuario(String nome, String endereco, LocalDate dataNascimento, LocalDate dataIndicou,
+            LocalDate dataProximaIndicacao) {
         this.nome = nome;
         this.endereco = endereco;
         this.dataNascimento = dataNascimento;
+        this.dataIndicou = dataIndicou;
+        this.dataProximaIndicacao = dataProximaIndicacao;
     }
 
     public String getNome() {
@@ -43,20 +46,26 @@ public class Usuario {
         this.dataNascimento = dataNascimento;
     }
 
-    public static LocalDate getDataIndicou() {
+    public LocalDate getDataIndicou() {
         return dataIndicou;
     }
 
-    public static void setDataIndicou(LocalDate dataIndicou) {
-        Usuario.dataIndicou = dataIndicou;
+    public void setDataIndicou(LocalDate dataIndicou) {
+        this.dataIndicou = dataIndicou;
     }
 
-    public static LocalDate getDataProximaIndicacao() {
+    public LocalDate getDataProximaIndicacao() {
         return dataProximaIndicacao;
     }
 
-    public static void setDataProximaIndicacao(LocalDate dataProximaIndicacao) {
-        Usuario.dataProximaIndicacao = dataProximaIndicacao;
+    public void setDataProximaIndicacao(LocalDate dataProximaIndicacao) {
+        this.dataProximaIndicacao = dataProximaIndicacao;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario [dataIndicou=" + dataIndicou + ", dataNascimento=" + dataNascimento + ", dataProximaIndicacao="
+                + dataProximaIndicacao + ", endereco=" + endereco + ", nome=" + nome + "]";
     }
 
 }

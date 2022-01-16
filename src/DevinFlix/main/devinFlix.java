@@ -1,11 +1,11 @@
 package DevinFlix.main;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 import DevinFlix.filmes.Filme;
 import DevinFlix.filmes.Genero;
-import DevinFlix.recomendacoes.Recomendar;
 import DevinFlix.usuarios.Usuario;
 
 public class devinFlix {
@@ -22,19 +22,17 @@ public class devinFlix {
 
     }
 
-    public static void recomendaFilme(Recomendar recomendar) {
+    public static void recomendaFilme(Usuario usuario, Filme filme, boolean recomenda) {
 
-        if (Usuario.getDataIndicou() == null) {
-            Usuario.setDataIndicou(LocalDate.now());
-            Usuario.setDataProximaIndicacao(LocalDate.now().plusDays(30));
-            recomendar.setUsuarioIndica(recomendar.getUsuarioIndica());
-            recomendar.setUsuarioIndicado(recomendar.getUsuarioIndicado());
-            recomendar.setFilme(recomendar.getFilme());
-            recomendar.setTexto(recomendar.getTexto());
-            System.out.println(recomendar.getUsuarioIndica() + " recomenda para " + recomendar.getUsuarioIndicado()
-                    + " o filme " + recomendar.getFilme() + recomendar.getTexto());
+        long diferencaEmDias = ChronoUnit.DAYS.between(usuario.getDataIndicou(), LocalDate.now());
+        if (diferencaEmDias > 30) {
+
+            usuario.setDataIndicou(LocalDate.now());
+            usuario.setDataProximaIndicacao(LocalDate.now().plusDays(30));
+            System.out.println("Indicação feita");
+
         } else {
-            System.out.println("Você só pode recomendar após " + Usuario.getDataProximaIndicacao());
+            System.out.println("Voce só pode indicar " + usuario.getDataProximaIndicacao());
         }
 
     }
@@ -44,11 +42,16 @@ public class devinFlix {
         Scanner inicio = new Scanner(System.in);
 
         Usuario lu[] = new Usuario[5];
-        lu[0] = new Usuario("Joao", "Rua 123", LocalDate.of(1991, 1, 1));
-        lu[1] = new Usuario("Pedro", "Rua 456", LocalDate.of(1992, 2, 2));
-        lu[2] = new Usuario("Jorge", "Rua 789", LocalDate.of(1993, 3, 3));
-        lu[3] = new Usuario("Silva", "Rua 741", LocalDate.of(1994, 4, 4));
-        lu[4] = new Usuario("Lucas", "Rua 852", LocalDate.of(1995, 5, 5));
+        lu[0] = new Usuario("Joao", "Rua 123", LocalDate.of(1991, 1, 1), LocalDate.of(2021, 01, 15),
+                LocalDate.of(2021, 01, 15).plusMonths(1));
+        lu[1] = new Usuario("Pedro", "Rua 456", LocalDate.of(1992, 2, 2), LocalDate.of(2021, 12, 16),
+                LocalDate.of(2021, 12, 16).plusMonths(1));
+        lu[2] = new Usuario("Jorge", "Rua 789", LocalDate.of(1993, 3, 3), LocalDate.of(2022, 01, 16),
+                LocalDate.of(2022, 01, 16).plusMonths(1));
+        lu[3] = new Usuario("Silva", "Rua 741", LocalDate.of(1994, 4, 4), LocalDate.of(1900, 1, 1),
+                LocalDate.of(1900, 1, 1).plusMonths(1));
+        lu[4] = new Usuario("Lucas", "Rua 852", LocalDate.of(1995, 5, 5), LocalDate.of(1900, 2, 1),
+                LocalDate.of(1900, 2, 1).plusMonths(1));
 
         Filme lf[] = new Filme[5];
         lf[0] = new Filme("Batman", "Filme do homem morcego que salva a cidade.", Genero.ACAO, "batman.com",
@@ -62,16 +65,17 @@ public class devinFlix {
         lf[4] = new Filme("Lagoa Azul", "Filme do homem loiro que salva a ilha.", Genero.TERROR, "lagoa.com",
                 LocalDate.of(1990, 10, 10));
 
-        Recomendar r1 = new Recomendar();
-        r1.setUsuarioIndica(lu[4].getNome());
-        r1.setUsuarioIndicado(lu[2].getNome());
-        r1.setFilme(lf[4]);
-        r1.setTexto("O filme é otimo, vale a pena ver");
-
-        Recomendar r2 = new Recomendar(lu[1].getNome(), lu[2].getNome(), lf[4],
-                "O filme é otimo, vale a pena ver");
-
-        recomendaFilme(r2);
+        // teste recomenda
+        recomendaFilme(lu[0], lf[0], true);
+        recomendaFilme(lu[1], lf[1], true);
+        recomendaFilme(lu[2], lf[2], true);
+        recomendaFilme(lu[3], lf[3], true);
+        recomendaFilme(lu[4], lf[4], true);
+        System.out.println(lu[0].getDataProximaIndicacao().toString());
+        System.out.println(lu[1].getDataProximaIndicacao().toString());
+        System.out.println(lu[2].getDataProximaIndicacao().toString());
+        System.out.println(lu[3].getDataProximaIndicacao().toString());
+        System.out.println(lu[4].getDataProximaIndicacao().toString());
 
         inicio.close();
     }
