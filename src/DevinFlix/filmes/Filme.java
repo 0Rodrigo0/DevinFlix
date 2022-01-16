@@ -9,7 +9,7 @@ public class Filme {
     private Genero genero;
     private String link;
     private LocalDate anoLancamento;
-    private String recomendado;
+    private Integer recomendado = 0;
     private Integer curtiu = 0;
     private Integer descurtiu = 0;
 
@@ -65,11 +65,11 @@ public class Filme {
         this.anoLancamento = anoLancamento;
     }
 
-    public String getRecomendado() {
+    public Integer getRecomendado() {
         return recomendado;
     }
 
-    public void setRecomendado(String recomendado) {
+    public void setRecomendado(Integer recomendado) {
         this.recomendado = recomendado;
     }
 
