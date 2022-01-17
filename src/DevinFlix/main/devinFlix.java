@@ -25,8 +25,8 @@ public class DevinFlix {
 
         public static void podeRecomendaFilme(Usuario usuario, Filme filme) {
 
-                long diferencaEmDias = ChronoUnit.DAYS.between(usuario.getDataIndicou(), LocalDate.now());
-                if (diferencaEmDias > 30) {
+                long diferencaEmDias = ChronoUnit.MONTHS.between(usuario.getDataIndicou(), LocalDate.now());
+                if (diferencaEmDias > 1) {
                         usuario.setDataIndicou(LocalDate.now());
                         usuario.setDataProximaIndicacao(LocalDate.now().plusMonths(1));
                         System.out.println("Indicação feita");
@@ -46,6 +46,16 @@ public class DevinFlix {
                 }
         }
 
+        public static void devendoouNao(Usuario usuario) {
+
+                if (usuario.isInadimplete() == true) {
+                        System.out.println(
+                                        usuario.getNome() + ", você esta inadimplente, porfavor acesse o financeiro!");
+                } else {
+                        System.out.println(usuario.getNome() + ", pagamento em dia, curta a plataforma!!");
+                }
+        }
+
         public static void main(String[] args) {
 
                 Scanner inicio = new Scanner(System.in);
@@ -53,15 +63,15 @@ public class DevinFlix {
                 // lista usuarios
                 Usuario lu[] = new Usuario[5];
                 lu[0] = new Usuario("Joao", "Rua 123", LocalDate.of(1991, 1, 1), LocalDate.of(2021, 01, 15),
-                                LocalDate.of(2021, 01, 15).plusMonths(1));
+                                LocalDate.of(2021, 01, 15).plusMonths(1), true);
                 lu[1] = new Usuario("Pedro", "Rua 456", LocalDate.of(1992, 2, 2), LocalDate.of(2021, 12, 16),
-                                LocalDate.of(2021, 12, 16).plusMonths(1));
+                                LocalDate.of(2021, 12, 16).plusMonths(1), false);
                 lu[2] = new Usuario("Jorge", "Rua 789", LocalDate.of(1993, 3, 3), LocalDate.of(2022, 01, 16),
-                                LocalDate.of(2022, 01, 16).plusMonths(1));
+                                LocalDate.of(2022, 01, 16).plusMonths(1), true);
                 lu[3] = new Usuario("Silva", "Rua 741", LocalDate.of(1994, 4, 4), LocalDate.of(1900, 1, 1),
-                                LocalDate.of(1900, 1, 1).plusMonths(1));
+                                LocalDate.of(1900, 1, 1).plusMonths(1), false);
                 lu[4] = new Usuario("Lucas", "Rua 852", LocalDate.of(1995, 5, 5), LocalDate.of(1900, 2, 1),
-                                LocalDate.of(1900, 2, 1).plusMonths(1));
+                                LocalDate.of(1900, 2, 1).plusMonths(1), true);
 
                 // lista filmes
                 Filme lf[] = new Filme[5];
@@ -77,7 +87,6 @@ public class DevinFlix {
                                 LocalDate.of(1990, 10, 10));
 
                 // teste recomendação
-                System.out.println("");
                 System.out.println("Teste de recomendação");
                 System.out.println("");
                 Recomendar r1 = new Recomendar(lu[0], lu[1], lf[3], "Ótimo filme, recomendo!");
@@ -88,10 +97,12 @@ public class DevinFlix {
                 recomendarFilme(r3.getUsuario(), r2.getFilme(), false);
                 System.out.println(r1);
                 System.out.println(r2);
+                System.out.println(r3);
+                System.out.println("");
 
                 // teste data se pode recomendar
-                System.out.println("");
-                System.out.println("Teste de pode recomendar");
+
+                System.out.println("Teste data se pode recomendar");
                 System.out.println("");
                 podeRecomendaFilme(lu[0], lf[0]);
                 podeRecomendaFilme(lu[1], lf[1]);
@@ -104,6 +115,14 @@ public class DevinFlix {
                 System.out.println(lu[3].getDataProximaIndicacao().toString());
                 System.out.println(lu[4].getDataProximaIndicacao().toString());
                 System.out.println("");
+
+                // inadimplente?
+                System.out.println("Está inadimplente?");
+                devendoouNao(lu[0]);
+                devendoouNao(lu[1]);
+                devendoouNao(lu[2]);
+                devendoouNao(lu[3]);
+                devendoouNao(lu[4]);
                 System.out.println("");
 
                 inicio.close();

@@ -9,17 +9,19 @@ public class Usuario {
     private LocalDate dataNascimento;
     private LocalDate dataIndicou = null;
     private LocalDate dataProximaIndicacao = null;
+    private boolean inadimplete;
 
     public Usuario() {
     }
 
     public Usuario(String nome, String endereco, LocalDate dataNascimento, LocalDate dataIndicou,
-            LocalDate dataProximaIndicacao) {
+            LocalDate dataProximaIndicacao, boolean inadimplete) {
         this.nome = nome;
         this.endereco = endereco;
         this.dataNascimento = dataNascimento;
         this.dataIndicou = dataIndicou;
         this.dataProximaIndicacao = dataProximaIndicacao;
+        this.inadimplete = inadimplete;
     }
 
     public String getNome() {
@@ -60,6 +62,14 @@ public class Usuario {
 
     public void setDataProximaIndicacao(LocalDate dataProximaIndicacao) {
         this.dataProximaIndicacao = dataProximaIndicacao;
+    }
+
+    public boolean isInadimplete() {
+        return inadimplete;
+    }
+
+    public void setInadimplete(boolean inadimplete) {
+        this.inadimplete = inadimplete;
     }
 
     @Override
