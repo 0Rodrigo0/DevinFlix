@@ -74,8 +74,9 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario [dataIndicou=" + dataIndicou + ", dataNascimento=" + dataNascimento + ", dataProximaIndicacao="
-                + dataProximaIndicacao + ", endereco=" + endereco + ", nome=" + nome + "]";
+        return "Usuario dataIndicou: " + dataIndicou + ", dataNascimento: " + dataNascimento
+                + ", dataProximaIndicacao: "
+                + dataProximaIndicacao + ", endereco: " + endereco + ", nome: " + nome + "]";
     }
 
 }

@@ -95,6 +95,12 @@ public class DevinFlix {
                 lf[4] = new Filme("Lagoa Azul", "Filme do homem loiro que salva a ilha.", Genero.TERROR, "lagoa.com",
                                 LocalDate.of(1990, 10, 10));
 
+                System.out.println("Lista de Filmes");
+                System.out.println("");
+                for (Filme filme : lf) {
+                        System.out.println(filme);
+                }
+
                 // teste recomendação
                 System.out.println("Teste de recomendação");
                 System.out.println("");
