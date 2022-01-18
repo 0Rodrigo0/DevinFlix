@@ -25,13 +25,22 @@ public class DevinFlix {
 
         public static void podeRecomendaFilme(Usuario usuario, Filme filme) {
 
-                long diferencaEmDias = ChronoUnit.MONTHS.between(usuario.getDataIndicou(), LocalDate.now());
-                if (diferencaEmDias > 1) {
-                        usuario.setDataIndicou(LocalDate.now());
-                        usuario.setDataProximaIndicacao(LocalDate.now().plusMonths(1));
-                        System.out.println("Indicação feita");
+                long diferencaEmDias = ChronoUnit.MONTHS.between(usuario.getDataIndicou(),
+                                usuario.getDataProximaIndicacao());
+
+                if (LocalDate.now().equals(usuario.getDataIndicou())) {
+                        System.out.println(usuario.getNome() + " voce só pode indicar "
+                                        + usuario.getDataProximaIndicacao());
                 } else {
-                        System.out.println("Voce só pode indicar " + usuario.getDataProximaIndicacao());
+                        if (diferencaEmDias < 1) {
+                                System.out.println(usuario.getNome() + " voce só pode indicar "
+                                                + usuario.getDataProximaIndicacao());
+                        } else {
+
+                                usuario.setDataIndicou(LocalDate.now());
+                                usuario.setDataProximaIndicacao(LocalDate.now().plusMonths(1));
+                                System.out.println(usuario.getNome() + " indicação feita");
+                        }
                 }
         }
 
@@ -42,7 +51,7 @@ public class DevinFlix {
                         usuario.setDataIndicou(LocalDate.now());
                         usuario.setDataProximaIndicacao(LocalDate.now().plusMonths(1));
                 } else {
-                        System.out.println(usuario.getNome() + ", Você não pode recomendar. :( ");
+                        System.out.println(usuario.getNome() + ", você não pode recomendar. :( ");
                 }
         }
 
@@ -50,7 +59,7 @@ public class DevinFlix {
 
                 if (usuario.isInadimplete() == true) {
                         System.out.println(
-                                        usuario.getNome() + ", você esta inadimplente, porfavor acesse o financeiro!");
+                                        usuario.getNome() + ", você esta inadimplente, por favor acesse o financeiro!");
                 } else {
                         System.out.println(usuario.getNome() + ", pagamento em dia, curta a plataforma!!");
                 }
@@ -64,8 +73,8 @@ public class DevinFlix {
                 Usuario lu[] = new Usuario[5];
                 lu[0] = new Usuario("Joao", "Rua 123", LocalDate.of(1991, 1, 1), LocalDate.of(2021, 01, 15),
                                 LocalDate.of(2021, 01, 15).plusMonths(1), true);
-                lu[1] = new Usuario("Pedro", "Rua 456", LocalDate.of(1992, 2, 2), LocalDate.of(2021, 12, 16),
-                                LocalDate.of(2021, 12, 16).plusMonths(1), false);
+                lu[1] = new Usuario("Pedro", "Rua 456", LocalDate.of(1992, 2, 2), LocalDate.of(2021, 12, 18),
+                                LocalDate.of(2021, 12, 18).plusMonths(1), false);
                 lu[2] = new Usuario("Jorge", "Rua 789", LocalDate.of(1993, 3, 3), LocalDate.of(2022, 01, 16),
                                 LocalDate.of(2022, 01, 16).plusMonths(1), true);
                 lu[3] = new Usuario("Silva", "Rua 741", LocalDate.of(1994, 4, 4), LocalDate.of(1900, 1, 1),

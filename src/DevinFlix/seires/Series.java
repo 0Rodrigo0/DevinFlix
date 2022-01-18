@@ -1,10 +1,11 @@
-package DevinFlix.filmes;
+package DevinFlix.seires;
 
 import java.time.LocalDate;
 
 import DevinFlix.categoria.Categoria;
+import DevinFlix.filmes.Genero;
 
-public class Filme extends Categoria {
+public class Series extends Categoria {
 
     private String nome;
     private String sinopse;
@@ -15,16 +16,12 @@ public class Filme extends Categoria {
     private Integer curtiu = 0;
     private Integer descurtiu = 0;
 
-    public Filme() {
-    }
-
-    public Filme(String nome, String sinopse, Genero genero, String link, LocalDate anoLancamento) {
+    public Series(String nome, String sinopse, Genero genero, String link, LocalDate anoLancamento) {
         this.nome = nome;
         this.sinopse = sinopse;
         this.genero = genero;
         this.link = link;
         this.anoLancamento = anoLancamento;
-
     }
 
     public String getNome() {
@@ -89,13 +86,6 @@ public class Filme extends Categoria {
 
     public void setDescurtiu(Integer descurtiu) {
         this.descurtiu = descurtiu;
-    }
-
-    @Override
-    public String toString() {
-        return "Nome: " + nome + ". Lancamento: " + anoLancamento + ". Genero: " + genero + ". Sinopse: " + sinopse
-                + "\n" + "Link: " + link + " Recomendado: =" + recomendado + " vezes." + "\n" +
-                "Curtidas: " + curtiu + ", Descurtidas: " + descurtiu + "\n";
     }
 
 }
