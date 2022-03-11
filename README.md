@@ -1,5 +1,3 @@
-## Olá!
-
 Este é o primeiro porjeto Java do curso DevinHouse.
 è uma ferramenta de gerenciamento de vídeos on demand denominado DevinFlix!
 Utiliza Java e esta sendo desenvolvido como um exercício.
